@@ -1,4 +1,4 @@
-package org.acme.getting.started.testing;
+package org.acme.getting.started;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -6,6 +6,9 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +19,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import org.acme.getting.started.GreetingResource;
 
 @QuarkusTest
+@Epic("Quarkus Allure")
 public class StaticContentTest {
 
     @TestHTTPEndpoint(GreetingResource.class)  
@@ -23,6 +27,8 @@ public class StaticContentTest {
     URL url;
 
     @Test
+    @Story("Allure Story Annotation")
+    @Description("Allure Test Description")
     public void testIndexHtml() throws Exception {
         try (InputStream in = url.openStream()) {
             String contents = readStream(in);
