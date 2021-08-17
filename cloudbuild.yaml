@@ -4,5 +4,5 @@ steps:
     args: ['test', 'allure:report']
 artifacts:
   objects:
-    location: [ 'gs://iz-allure-reports/automated' ]
-    paths: [ [ '/target/site/allure-maven-plugin']]
+    location: 'gs://iz-allure-reports/automated'
+    paths: ['/target/site/allure-maven-plugin']
