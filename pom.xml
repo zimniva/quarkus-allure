@@ -153,5 +153,12 @@
         </plugins>
       </build>
     </profile>
+  <profile>
+    <id>cloud</id>
+    <activation><property><name>cloud</name></property></activation>
+    <properties>
+
+    </properties>
+  </profile>
   </profiles>
 </project>
