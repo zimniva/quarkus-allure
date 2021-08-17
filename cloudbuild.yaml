@@ -1,4 +1,8 @@
 steps:
   - name: maven:3-jdk-11
     entrypoint: mvn
-    args: ['test', 'allure:serve']
+    args: ['test', 'allure:report']
+artifacts:
+  objects:
+    location: [ 'gs://iz-allure-reports/automated' ]
+    paths: [ [ '/target/site/allure-maven-plugin']]
